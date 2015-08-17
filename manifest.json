@@ -9,5 +9,9 @@
       "js": ["jquery-2.1.4.js","script.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["background.js"]
+  }
 }

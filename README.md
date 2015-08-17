@@ -14,8 +14,7 @@ yodobashi.comの検索結果によく使う店舗の在庫状況を表示するC
 インストール完了後、[yodobashi.com](http://www.yodobashi.com/)でほしい商品を検索するだけです。
 
 # よく使う店舗の変更
-1. script.jsをエディタで開き、以下を直接変更する
-```
-var myStoreName = "マルチメディアAkiba";
-```
-2. chrome://extensions/ を開き、リロードリンクをクリックする
+
+1. chrome://extensions/の『Yodobashi Stock Checker』のオプションをクリック
+2. 『よく使う店舗』に店舗名を入力 (例：マルチメディアAkiba)
+3. 『保存』をクリック
