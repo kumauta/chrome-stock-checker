@@ -9,12 +9,19 @@ $(function () {
         getStock(stockLink, this);
     });
 });
+function getStock(stockUrl, target)
+{
+    var myStoreName = "";
+    chrome.runtime.sendMessage({action: "getLocalStorage"}, function(response) {
+      if (response["store_name"]) {
+        myStoreName = response["store_name"];
+      }
+    });
 
-function getStock(stockUrl, target) {
     $.ajax({
-        url: stockUrl,
-    }).done(function (data) {
-        var myStoreName = "マルチメディアAkiba";
+        url : stockUrl, 
+    }).done(function (data)
+    {
         var stock = "在庫なし";
         $(data).find(".storeInfoUnit").each(function () {
             var storeName = $(this).find(".storeName").text();
