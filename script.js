@@ -1,4 +1,9 @@
 $(function () {
+
+    $(".cartNavInner").each(function () {
+        appendDiscontinued(this);
+    });
+
     $(".stockOpen").each(function () {
         var stockLink = "http://www.yodobashi.com/" + $(this).attr('rel');
         getStock(stockLink, this);
@@ -20,4 +25,9 @@ function getStock(stockUrl, target) {
         $(target).html(myStoreName + ":" + stock);
     }).fail(function (data) {
     });
+}
+
+function appendDiscontinued(target) {
+    var newInput = $(target).html() + "<input type='hidden' name='discontinued' value='false'>";
+    $(target).html(newInput);
 }
