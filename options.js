@@ -12,6 +12,9 @@ $(function(){
   }).done(function (data) {
       $('#store_name > option').remove();
       $(data).find(".childNav > li").each(function () {
+        if($(this).text().match(/コンシェルジェ/)) {
+          return true;
+        }
         //console.log($(this).text());
         $('#store_name').append($('<option>').attr({value: $(this).text()}).text($(this).text()));
       });
