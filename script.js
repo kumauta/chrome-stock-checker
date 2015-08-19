@@ -8,11 +8,17 @@ $(function ()
 });
 function getStock(stockUrl, target)
 {
+    var myStoreName = "";
+    chrome.runtime.sendMessage({action: "getLocalStorage"}, function(response) {
+      if (response["store_name"]) {
+        myStoreName = response["store_name"];
+      }
+    });
+
     $.ajax({
         url : stockUrl, 
     }).done(function (data)
     {
-        var myStoreName = "マルチメディアAkiba";
         var stock = "在庫なし";
         $(data).find(".storeInfoUnit").each(function ()
         {
