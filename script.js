@@ -9,19 +9,18 @@ $(function () {
         getStock(stockLink, this);
     });
 });
-function getStock(stockUrl, target)
-{
+
+function getStock(stockUrl, target) {
     var myStoreName = "";
-    chrome.runtime.sendMessage({action: "getLocalStorage"}, function(response) {
-      if (response["store_name"]) {
-        myStoreName = response["store_name"];
-      }
+    chrome.runtime.sendMessage({action: "getLocalStorage"}, function (response) {
+        if (response["store_name"]) {
+            myStoreName = response["store_name"];
+        }
     });
 
     $.ajax({
-        url : stockUrl, 
-    }).done(function (data)
-    {
+        url: stockUrl,
+    }).done(function (data) {
         var stock = "在庫なし";
         $(data).find(".storeInfoUnit").each(function () {
             var storeName = $(this).find(".storeName").text();
