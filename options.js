@@ -10,7 +10,6 @@ $(function(){
   $.ajax({
       url: storeListUrl,
   }).done(function (data) {
-      $('#store_name > option').remove();
       $(data).find(".childNav > li").each(function () {
         if($(this).text().match(/コンシェルジェ/)) {
           return true;
@@ -21,6 +20,9 @@ $(function(){
       if (localStorage["store_name"]) {
         //console.log('localStorage store_name='+localStorage["store_name"]);
         $('#store_name').val(localStorage["store_name"]);
+      }else{
+        $('#store_name').val('ヨドバシ・ドット・コム');
+        localStorage["store_name"] = $("#store_name").val();
       }
   }).fail(function (data) {
   });
