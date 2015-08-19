@@ -11,7 +11,7 @@ $(function () {
 });
 
 function getStock(stockUrl, target) {
-    var myStoreName = "";
+    var myStoreName = "ヨドバシ・ドット・コム";
     chrome.runtime.sendMessage({action: "getLocalStorage"}, function (response) {
         if (response["store_name"]) {
             myStoreName = response["store_name"];
