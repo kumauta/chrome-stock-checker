@@ -19,6 +19,5 @@ function getStock(stockUrl, target) {
         });
         $(target).html(myStoreName + ":" + stock);
     }).fail(function (data) {
-        alert('error!!!');
     });
 }
