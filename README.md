@@ -1,6 +1,11 @@
 # Yodobashi Stock Checker
 
-yodobashi.comの検索結果によく使う店舗の在庫状況を表示するChrome Extentionです。
+yodobashi.comの検索をちょっと便利にするChrome Extentionです。
+
+以下の機能を備えています。
+
+* 検索結果によく使う店舗の在庫状況を表示する
+* 検索結果に販売終了商品を表示させない
 
 # インストール方法
 
@@ -15,6 +20,6 @@ yodobashi.comの検索結果によく使う店舗の在庫状況を表示するC
 
 # よく使う店舗の変更
 
-1. chrome://extensions/の『Yodobashi Stock Checker』のオプションをクリック
+1. chrome://extensions/ を開き『Yodobashi Stock Checker』のオプションをクリック
 2. 『よく使う店舗』に店舗名をプルダウンから選択 (デフォルト値：ヨドバシ・ドット・コム)
 3. 『保存』をクリック
